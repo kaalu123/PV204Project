@@ -1,0 +1,1 @@
+Please encrypt this file using AES EAX and split the key using Shamir secret Sharing technique.
