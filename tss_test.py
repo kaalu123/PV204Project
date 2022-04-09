@@ -1,3 +1,4 @@
+# Test file for TSS package referenced from TSS library
 import unittest
 import tss
 from tss import share_secret, reconstruct_secret, Hash, TSSError
