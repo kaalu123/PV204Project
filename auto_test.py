@@ -389,7 +389,7 @@ def distribute_shares(s, shares):
             f.close()
 
             # Remove the encrypted shares and signatures from the server after successfull distribution of shares
-            #os.remove(f"signed_enc_share_user{x}.txt")
+            os.remove(f"signed_enc_share_user{x}.txt")
 
             """ Closing the connection """
             client.close()
@@ -399,7 +399,7 @@ def distribute_shares(s, shares):
 
         except:
             print("Invalid Certificate")
-            # exit(0)		#Exit communication if parties not authenticated'''
+            # exit(0)		#Exit communication if parties not authenticated
 
 
 def rsa_sign_pss_sha256(private_key: rsa.RSAPrivateKey, data: bytes) -> bytes:
@@ -453,7 +453,6 @@ def recollect_shares(t):
         dir_key = f"{pwd}/User{x}/User{x}-key.pem"
         dir_csr = f"{pwd}/User{x}/User{x}-csr.pem"
         dir_crt = f"{pwd}/User{x}/User{x}-cert.pem"
-        dir_signed_enc_share = f"{pwd}/User{x}/signed_enc_share_user{x}.txt"
         dir_dec_share = f"{pwd}/User{x}/dec_share_user{x}.txt"
         dir_signed_share = f"{pwd}/User{x}/signed_enc_share_user{x}.txt"
         try:
@@ -694,21 +693,19 @@ def main():
     #time.sleep(2)
     CA_key_cert_gen()
     RSA_users_key_cert_gen(s,t)
-    key=key_from_secret(secret)	#
-    encrypt_with_key(key)  		# 
+    key=key_from_secret(secret)	
+    encrypt_with_key(key)  		 
 
     # Delete the plaintext file and only keep the non breakable ciphertext for it.
-    #os.remove("clear.txt")
+    #os.remove("clear.txt")    Not activated to avoid user to recreate clear.txt for every run.
         
     shares = create_shares(t, s, secret)
     
-    #start_server()
-    # Creating a TCP server socket
-    
     distribute_shares(s,shares)
-    
     recollect_shares(t)
     # Now after this procedure reconstruct the secret and derive the required file.
+    decrypt_final_recollected_shares(t)
+    # Reconstruct the secret and derive the required file.
     reconstructed_secret=reconstruct_secret(t)
     reconstructed_key=key_from_reconstructed_secret(reconstructed_secret)	#
     decrypt_with_reconstructed_key(reconstructed_key)
