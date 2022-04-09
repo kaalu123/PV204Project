@@ -25,10 +25,12 @@ Also provides the option for resharing of the shares on selection of Option 3. C
 NOTE-:Use of Socket Programming to implement Server Client model and each user  given separate directory for storing it’s share of files.
 
 Usage-:
-$ python3 check2.py <Secret Phrase> <Threshold> <No of Users>
+$ python3 check2.py Secret Phrase Treshold No of Users
+
+Eg-: $python3 MySecretToHide 3 6
  
 ---------------------------------------------------------------------
-    |   SHARE-SECRET: SIMPLE SECRET SHARING USING PYTHON       |
+|   SHARE-SECRET: SIMPLE SECRET SHARING USING PYTHON       |
 ---------------------------------------------------------------------
 1) Split a secret into codes/shares.
 2) Combine codes to recover secret.
