@@ -709,7 +709,7 @@ def main():
         encrypt_with_key(key)  #
 
         # Delete the plaintext file and only keep the non breakable ciphertext for it.
-        os.remove("clear.txt")	#Not activated to avoid user creating file everytime for demonstration.
+        os.remove("clear.txt")
 
         shares = create_shares(t, s, secret)
 
