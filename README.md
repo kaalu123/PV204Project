@@ -20,10 +20,21 @@ Sends this encrypted share back to Dealer after verifying server(dealer) certifi
 Dealer verifies user’s signature and decrypts share by own private key.
 Recomputes the secret and derives the key used to decrypt the hidden file.
 
+Also provides the option for resharing of the shares on selection of Option 3. Can only be executed after a secret is initially split into shares.
+
 NOTE-:Use of Socket Programming to implement Server Client model and each user  given separate directory for storing it’s share of files.
 
 Usage-:
 $ python3 check2.py <Secret Phrase> <Threshold> <No of Users>
+ 
+  ---------------------------------------------------------------------
+               |   SHARE-SECRET: SIMPLE SECRET SHARING USING PYTHON       |
+           ---------------------------------------------------------------------
+
+1) Split a secret into codes/shares.
+2) Combine codes to recover secret.
+3) Execute resharing of secret shares to users.
+
 
 Make sure to keep file clear.txt in PWD which has to be secured using this tool. Please import all libraries used in the project using pip installer.
 
