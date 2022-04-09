@@ -39,4 +39,6 @@ Eg-: $python3 MySecretToHide 3 6
 
 Make sure to keep file clear.txt in PWD which has to be secured using this tool. Please import all libraries used in the project using pip installer.
 
+![Dealer](https://user-images.githubusercontent.com/99664677/162592655-2a2d5055-17a5-4d96-8453-3c0eb1e0f046.png)
+
 
