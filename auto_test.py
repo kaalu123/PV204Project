@@ -389,7 +389,7 @@ def distribute_shares(s, shares):
             f.close()
 
             # Remove the encrypted shares and signatures from the server after successfull distribution of shares
-            os.remove(f"signed_enc_share_user{x}.txt")
+            #os.remove(f"signed_enc_share_user{x}.txt")
 
             """ Closing the connection """
             client.close()
