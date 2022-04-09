@@ -23,8 +23,6 @@ import binascii
 import os
 import datetime
 import time
-from tqdm import tqdm
-from subprocess import call
 import hashlib
 
 pwd = os.getcwd()
