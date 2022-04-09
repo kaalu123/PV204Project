@@ -27,10 +27,9 @@ NOTE-:Use of Socket Programming to implement Server Client model and each user  
 Usage-:
 $ python3 check2.py <Secret Phrase> <Threshold> <No of Users>
  
-  ---------------------------------------------------------------------
-               |   SHARE-SECRET: SIMPLE SECRET SHARING USING PYTHON       |
-           ---------------------------------------------------------------------
-
+---------------------------------------------------------------------
+    |   SHARE-SECRET: SIMPLE SECRET SHARING USING PYTHON       |
+---------------------------------------------------------------------
 1) Split a secret into codes/shares.
 2) Combine codes to recover secret.
 3) Execute resharing of secret shares to users.
